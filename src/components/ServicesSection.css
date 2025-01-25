@@ -1,0 +1,40 @@
+.services-section {
+    padding: 60px 20px;
+  }
+  
+  .services-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  
+  .services-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+  }
+  
+  .card {
+    width: 250px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .card h3 {
+    margin-top: 15px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .services-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 80%;
+      margin-bottom: 30px;
+    }
+  }
+  

@@ -1,0 +1,155 @@
+/* Global Styles for Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Hero Content Styling */
+  .hero-content {
+    max-width: 800px;
+    z-index: 2; /* Keeps the text content above the background balls */
+    position: relative;
+  }
+  
+  /* Hero Heading */
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  .hero-section p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+  }
+  
+  /* Doodle Animation under Heading */
+  .doodle {
+    margin-top: 25px; /* Increased margin to bring doodle further down */
+    height: 60px; /* Increased height of doodle */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Ensures doodle is centered horizontally */
+  }
+  
+  .doodle svg {
+    width: 90%; /* Increased width to make doodle more prominent */
+    max-width: 400px; /* Optional: limits the width to a maximum pixel size */
+  }
+  
+  .doodle .doodlePath {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: doodleDraw 5s ease forwards;
+  }
+  
+  /* Doodle draw animation */
+  @keyframes doodleDraw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  /* Button Styling */
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .cta-buttons button {
+    padding: 15px 30px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .cta-buttons button:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  /* Background Black Balls (bouncing effect) */
+  .hero-section::before, .hero-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    animation: bounce 5s infinite ease-in-out;
+  }
+  
+  .hero-section::before {
+    animation-delay: 0s;
+    top: 10%; /* Position for ball 1 */
+    left: 10%;
+  }
+  
+  .hero-section::after {
+    animation-delay: 1s;
+    top: 70%; /* Position for ball 2 */
+    left: 70%;
+  }
+  
+  /* Animation for the bouncing balls */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px);
+    }
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .hero-section {
+      padding: 20px;
+    }
+  
+    /* Smaller balls on smaller screens */
+    .hero-section::before,
+    .hero-section::after {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .cta-buttons button {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .hero-section {
+      padding: 15px;
+    }
+  
+    /* Even smaller balls */
+    .hero-section::before,
+    .hero-section::after {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .cta-buttons button {
+      font-size: 0.8rem;
+    }
+  }
+  

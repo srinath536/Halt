@@ -1,0 +1,15 @@
+.testimonials-section {
+    padding: 60px 20px;
+    background-color: #f0f4f7;
+    text-align: center;
+  }
+  
+  .testimonials-section blockquote {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  footer {
+    font-style: italic;
+  }
+  
