@@ -1,0 +1,63 @@
+/* Contact Us Container */
+.contact-container {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  color: black;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Header Styling */
+.contact-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px dashed black;
+  padding-bottom: 10px;
+}
+
+.contact-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Button Styling */
+.send-email-btn {
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.send-email-btn:hover {
+  background-color: #444;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .contact-content h2 {
+    font-size: 2rem;
+  }
+  .contact-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-content h2 {
+    font-size: 1.5rem;
+  }
+  .send-email-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}

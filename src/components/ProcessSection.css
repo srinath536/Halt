@@ -22,96 +22,62 @@
   text-transform: uppercase;
   border-bottom: 2px dashed #000;
   padding-bottom: 10px;
+  letter-spacing: 2px;
+  color: black;
 }
 
-/* Roadmap Layout - Doodly Path Flow */
-.process-roadmap {
+/* Steps Layout */
+.process-steps {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  position: relative;
-  gap: 50px;
-  flex-wrap: wrap;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: nowrap;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0;
-  flex-direction: row;
+  width: 100%;
 }
 
-/* Step Styling - Continuous Flow */
-.roadmap-step {
-  position: relative;
+/* Step Styling */
+.step {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.roadmap-icon img {
-  width: 60px;
-  height: 60px;
-  filter: grayscale(100%) brightness(0) invert(0);
+.step-icon img {
+  width: 70px;
+  height: 70px;
   margin-bottom: 15px;
+  filter: grayscale(100%) brightness(0) invert(0);
 }
 
-.roadmap-content h3 {
-  font-size: 1.4rem;
-  margin: 10px 0;
-  text-transform: uppercase;
+.step-title h3 {
+  font-size: 1.6rem;
   font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
-.roadmap-content p {
-  font-size: 1rem;
+.step-title p {
+  font-size: 1.1rem;
   color: #444;
   text-align: center;
   margin-top: 5px;
 }
 
-/* Doodle-like Curved Arrows */
-.roadmap-arrow {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  width: 40px;
-  height: 40px;
-  border-top: 3px solid black;
-  border-right: 3px solid black;
-  border-radius: 50%;
-  transform: rotate(45deg);
-  z-index: -1;
-  box-sizing: border-box;
-  background-image: radial-gradient(circle, transparent 1px, #000 1px);
-  background-size: 5px 5px;
-  animation: doodleArrow 1.5s ease-in-out infinite;
-}
-
-/* Animation for doodled curved arrows */
-@keyframes doodleArrow {
-  0% {
-    transform: rotate(45deg);
-  }
-  50% {
-    transform: rotate(50deg);
-  }
-  100% {
-    transform: rotate(45deg);
-  }
-}
-
-/* Responsive Layout for Small Screens */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .process-roadmap {
+  .process-steps {
     flex-direction: column;
-    gap: 40px;
-    align-items: flex-start;
+    gap: 30px;
   }
 
-  .roadmap-step {
+  .step {
     width: 250px;
-  }
-
-  .roadmap-arrow {
-    display: none;
   }
 }
 
@@ -120,11 +86,11 @@
     font-size: 2rem;
   }
 
-  .roadmap-content h3 {
-    font-size: 1.2rem;
+  .step-title h3 {
+    font-size: 1.4rem;
   }
 
-  .roadmap-content p {
-    font-size: 0.9rem;
+  .step-title p {
+    font-size: 1rem;
   }
 }

@@ -1,9 +1,9 @@
 import './App.css'
+import ContactUs from './components/ContactUs';
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import ProcessSection from './components/ProcessSection';
 import ServicesSection from './components/ServicesSection';
-import Story from './components/Story';
 function App() {
  
 
@@ -13,6 +13,7 @@ function App() {
     <HeroSection />
     <ServicesSection/>
     <ProcessSection/>
+    <ContactUs/>
     
   </div>
 );

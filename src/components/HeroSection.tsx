@@ -8,8 +8,14 @@ const HeroSection: React.FC = () => {
         <h1>Tailored Human-Alternate Solutions for Every Business</h1>
         <p>We turn your challenges into custom solutions.</p>
         <div className="cta-buttons">
-          <button>Contact Us</button>
-          <button>Explore Services</button>
+          {/* "Contact Us" button that navigates to contact section */}
+          <a href="#contact">
+            <button>Contact Us</button>
+          </a>
+          {/* "Explore Services" button that navigates to services section */}
+          <a href="#services">
+            <button>Explore Services</button>
+          </a>
         </div>
         {/* Curved Arrow Doodle */}
         <div className="doodle">

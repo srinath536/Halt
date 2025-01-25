@@ -29,21 +29,16 @@ const ProcessSection: React.FC = () => {
         <h2>How It Works</h2>
       </div>
 
-      <div className="process-roadmap">
-        {processSteps.map((step, index) => (
-          <div className="roadmap-step" key={step.id}>
-            <div className="roadmap-icon">
+      <div className="process-steps">
+        {processSteps.map((step) => (
+          <div className="step" key={step.id}>
+            <div className="step-icon">
               <img src={step.icon} alt={step.title} />
             </div>
-            <div className="roadmap-content">
+            <div className="step-title">
               <h3>{step.title}</h3>
               <p>{step.description}</p>
             </div>
-            
-            {/* Doodle-like arrows between steps */}
-            {index < processSteps.length - 1 && (
-              <div className="roadmap-arrow"></div>
-            )}
           </div>
         ))}
       </div>
