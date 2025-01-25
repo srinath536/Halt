@@ -12,6 +12,11 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  const scrollToTop = () => {
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <header className="header">
       <div className="container">
@@ -28,7 +33,7 @@ const Header: React.FC = () => {
         <nav className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
           <ul className="nav-list">
             <li>
-              <a href="#about" onClick={closeMenu}>About</a>
+              <a href="#" onClick={() => { closeMenu(); scrollToTop(); }}>Home</a>
             </li>
             <li>
               <a href="#services" onClick={closeMenu}>Services</a>
@@ -40,8 +45,8 @@ const Header: React.FC = () => {
               <a href="#portfolio" onClick={closeMenu}>Portfolio</a>
             </li>
             <li className="contact-btn">
-      <a href="#contact" onClick={closeMenu}>Contact Us</a>
-    </li>
+              <a href="#contact" onClick={closeMenu}>Contact Us</a>
+            </li>
           </ul>
         </nav>
       </div>

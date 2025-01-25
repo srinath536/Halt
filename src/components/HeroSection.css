@@ -69,7 +69,7 @@
   }
   
   .cta-buttons button {
-    padding: 15px 30px;
+    padding: 10px 18px;
     background-color: white;
     color: black;
     border: 2px solid black;
@@ -109,14 +109,7 @@
   }
   
   /* Animation for the bouncing balls */
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-40px);
-    }
-  }
+  
   
   /* Responsive Styles */
   @media screen and (max-width: 768px) {
@@ -127,8 +120,8 @@
     /* Smaller balls on smaller screens */
     .hero-section::before,
     .hero-section::after {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
     }
   
     .cta-buttons button {
@@ -144,8 +137,8 @@
     /* Even smaller balls */
     .hero-section::before,
     .hero-section::after {
-      width: 20px;
-      height: 20px;
+      width: 40px;
+      height: 40px;
     }
   
     .cta-buttons button {
