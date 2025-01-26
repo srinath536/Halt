@@ -5,7 +5,7 @@ const services = [
   {
     id: "website-development",
     icon: "https://cdn-icons-png.flaticon.com/512/7376/7376349.png",
-    title: "Website Development",
+    title: "Web Application",
     description: "Custom web applications and responsive websites",
   },
   {

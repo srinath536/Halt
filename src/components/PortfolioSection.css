@@ -1,33 +1,108 @@
+/* General Portfolio Section Styling */
 .portfolio-section {
-    padding: 60px 20px;
-    background-color: #fff;
+    padding: 50px 20px;
     text-align: center;
+    background-color: white;
   }
   
-  .portfolio-grid {
+  .portfolio-title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Carousel container */
+  .portfolio-carousel {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    overflow: hidden; /* Only one item visible at a time */
+    scroll-behavior: smooth;
+    position: relative;
   }
   
+  /* Portfolio item styles */
   .portfolio-item {
-    width: 30%;
-    height: 200px;
-    background-color: #ddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 0 0 100%; /* Each item takes up the full width of the container */
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: scale(0.9);
+    opacity: 0.5;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .portfolio-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .portfolio-item img {
+    width: 80%; /* Reduced the width from 100% to 80% */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Set a maximum height */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .portfolio-item h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  /* Active item styling */
+  .portfolio-item:focus,
+  .portfolio-item.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 1024px) {
+    .portfolio-title {
+      font-size: 2.5rem;
+    }
+    .portfolio-item img {
+      max-height: 150px; /* Further reduce image height */
+    }
   }
   
   @media screen and (max-width: 768px) {
-    .portfolio-grid {
-      flex-direction: column;
-      align-items: center;
+    .portfolio-title {
+      font-size: 2rem;
     }
+    .portfolio-carousel {
+      gap: 10px;
+    }
+    .portfolio-item img {
+      max-height: 120px;
+    }
+  }
   
-    .portfolio-item {
-      width: 80%;
-      margin-bottom: 20px;
+  @media screen and (max-width: 480px) {
+    .portfolio-title {
+      font-size: 1.8rem;
+    }
+    .portfolio-carousel {
+      gap: 5px;
+    }
+    .portfolio-item img {
+      max-height: 100px; /* Reduce for smaller screens */
     }
   }
   

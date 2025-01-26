@@ -3,6 +3,7 @@ import './HeroSection.css';
 
 const HeroSection: React.FC = () => {
   return (
+    
     <section id="home" className="hero-section">
       <div className="hero-content">
         <h1>Tailored Human-Alternate Solutions for Every Business</h1>
