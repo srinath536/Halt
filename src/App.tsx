@@ -1,5 +1,6 @@
 import './App.css'
 import ContactUs from './components/ContactUs';
+import Footer from './components/Footer';
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import PortfolioSection from './components/PortfolioSection';
@@ -16,7 +17,7 @@ function App() {
     <ProcessSection/>
     <PortfolioSection/>
     <ContactUs/>
-    
+    <Footer/>
   </div>
 );
 };

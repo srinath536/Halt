@@ -1,66 +1,40 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import Slider from "react-slick"; // React Slick for carousel
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./PortfolioSection.css";
-import poster1 from "../assets/1.jpg";
-import poster2 from "../assets/2.jpg";
-import poster3 from "../assets/3.jpg";
-import poster4 from "../assets/4.jpg";
-import poster5 from "../assets/1.jpg";
-import poster6 from "../assets/2.jpg";
-import poster7 from "../assets/3.jpg";
-import poster8 from "../assets/4.jpg";
+import poster from "../assets/4.jpg"; // Adjust the path as necessary
 
 const PortfolioSection: React.FC = () => {
-  const portfolioRef = useRef<HTMLDivElement>(null);
-  const [isScrolling, setIsScrolling] = useState(false);
-
   const projects = [
-    { name: "Poster Design", image: poster1 },
-    { name: "Website Development", image: poster2 },
-    { name: "Brand Identity", image: poster3 },
-    { name: "Solution Architecture", image: poster4 },
-    { name: "UI/UX Design", image: poster5 },
-    { name: "Mobile App Development", image: poster6 },
-    { name: "E-commerce Solutions", image: poster7 },
-    { name: "AI-Powered Tools", image: poster8 },
+    { title: "Branding", image: poster },
+    { title: "Websites", image: poster },
+    { title: "Poster Designs", image: poster },
+    { title: "Poster Designs", image: poster },
   ];
 
-  useEffect(() => {
-    const handleScroll = (e: WheelEvent) => {
-      if (!portfolioRef.current || isScrolling) return;
-      setIsScrolling(true);
-
-      const scrollContainer = portfolioRef.current;
-      const itemWidth = scrollContainer.offsetWidth;
-
-      const scrollAmount = e.deltaY > 0 ? itemWidth : -itemWidth;
-      const newScrollPosition = Math.round((scrollContainer.scrollLeft + scrollAmount) / itemWidth) * itemWidth;
-
-      scrollContainer.scrollTo({ left: newScrollPosition, behavior: "smooth" });
-
-      setTimeout(() => setIsScrolling(false), 500); // Prevent further scroll until the animation completes
-    };
-
-    window.addEventListener("wheel", handleScroll, { passive: false });
-
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, [isScrolling]);
+  const settings = {
+    dots: true, // Enables navigation dots
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
 
   return (
-    <section className="portfolio-section" id="portfolio">
-      <h2 className="portfolio-title">Our Work</h2>
-      <div ref={portfolioRef} className="portfolio-carousel">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="portfolio-item"
-            style={{ animationDelay: `${index * 0.2}s` }}
-          >
-            <img src={project.image} alt={project.name} />
-            <h3>{project.name}</h3>
-          </div>
-        ))}
+    <section id="portfolio" className="portfolio-section">
+      <h2 className="portfolio-title">Our Projects</h2>
+      <div className="portfolio-carousel">
+        <Slider {...settings}>
+          {projects.map((project, index) => (
+            <div key={index} className="portfolio-slide">
+              <img src={project.image} alt={project.title} className="doodle-image" />
+              <h3 className="doodle-title">{project.title}</h3>
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );
