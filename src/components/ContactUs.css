@@ -1,29 +1,49 @@
-/* Contact Us Container */
+/* Contact Us Section */
 .contact-container {
   padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
   background-color: white;
-  color: black;
-  box-sizing: border-box;
   font-family: "Arial", sans-serif;
+  box-sizing: border-box;
 }
 
-/* Header Styling */
-.contact-content h2 {
+/* Flexbox Layout */
+.contact-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Wraps content on smaller screens */
+}
+
+/* Image Styling */
+.contact-image {
+  flex: 1;
+  max-width: 50%; /* Default for larger devices */
+  height: auto;
+  object-fit: cover;
+}
+
+/* Text Content */
+.contact-text-container {
+  flex: 1;
+  max-width: 45%; /* Default for larger devices */
+}
+
+.contact-text-container h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
   font-weight: bold;
   text-transform: uppercase;
+  margin-bottom: 20px;
   border-bottom: 2px dashed black;
   padding-bottom: 10px;
 }
 
-.contact-content p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+.contact-text-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
   color: #555;
+  line-height: 1.6;
 }
 
 /* Button Styling */
@@ -35,29 +55,63 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .send-email-btn:hover {
   background-color: #444;
 }
 
-/* Responsive Design for Smaller Screens */
+/* Responsive Adjustments for Tablets */
 @media (max-width: 768px) {
-  .contact-content h2 {
-    font-size: 2rem;
+  .contact-content {
+    flex-direction: column;
+    text-align: center;
   }
-  .contact-content p {
-    font-size: 1rem;
+
+  .contact-text-container {
+    max-width: 100%; /* Full width for text */
+  }
+
+  .contact-image {
+    max-width: 100%; /* Full width for image */
+  }
+
+  .contact-text-container h2 {
+    font-size: 2.5rem; /* Make the title slightly larger */
+  }
+
+  .contact-text-container p {
+    font-size: 1.4rem; /* Make the paragraph text slightly larger */
+    line-height: 1.8;
   }
 }
 
+/* Responsive Adjustments for Mobiles */
 @media (max-width: 480px) {
-  .contact-content h2 {
-    font-size: 1.5rem;
+  .contact-content {
+    width: 100%; /* Ensure the entire section scales to fit the screen */
   }
+
+  .contact-text-container {
+    max-width: 100%; /* Full width for text */
+  }
+
+  .contact-image {
+    max-width: 100%; /* Full width for image */
+  }
+
+  .contact-text-container h2 {
+    font-size: 2.2rem; /* Keep the title bold and visually distinct */
+  }
+
+  .contact-text-container p {
+    font-size: 1.3rem; /* Scale up the paragraph text */
+    line-height: 1.8;
+  }
+
   .send-email-btn {
-    padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 1.2rem; /* Make the button slightly larger */
+    padding: 14px 26px;
   }
 }

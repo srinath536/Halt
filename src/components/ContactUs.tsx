@@ -1,17 +1,23 @@
 import React from "react";
 import './ContactUs.css';
+import contactImage from "../assets/contact.png"; // Import your image
 
 const ContactUs: React.FC = () => {
   return (
     <section id="contact" className="contact-container">
       <div className="contact-content">
-        <h2>Contact Us</h2>
-        <p>We're here to assist! Send us an email with any questions or inquiries.</p>
-        
-        {/* Mailto link that opens the user's email client */}
-        <a href="mailto:halt@gmail.com?subject=Inquiry&body=Hi, I would like to...">
-          <button className="send-email-btn">Send Email</button>
-        </a>
+        <img src={contactImage} alt="Contact Us" className="contact-image" />
+        <div className="contact-text-container">
+          <h2>Contact Us</h2>
+          <p>
+            Just give us a call, and we'll put everything in a box and deliver
+            it to you!
+          </p>
+          <p>For further inquiries, feel free to reach us at any time.</p>
+          <a href="mailto:halt@gmail.com?subject=Inquiry&body=Hi, I would like to...">
+            <button className="send-email-btn">Send Email</button>
+          </a>
+        </div>
       </div>
     </section>
   );
