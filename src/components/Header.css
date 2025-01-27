@@ -165,12 +165,14 @@ html {
         flex-direction: column;
         gap: 1.5rem;
         padding: 1.5rem;
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 480px) {
     .logo {
         font-size: 1.2rem;
+        margin-left: 0;
     }
 
     .nav-list a {
