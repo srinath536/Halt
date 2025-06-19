@@ -1,108 +1,68 @@
-/* Portfolio Section Styles */
 .portfolio-section {
   padding: 80px 20px;
-  background-color: #fefefe;
-  text-align: center;
+  background-color: #f9f9f9;
   font-family: "Arial", sans-serif;
-  overflow: hidden;
+  text-align: center;
 }
 
 .portfolio-title {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  color: #222;
 }
 
-/* Carousel Container */
-.portfolio-carousel {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.portfolio-slide {
+.portfolio-scroll-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 20px;
-  padding: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
-.doodle-image {
-  width: 200px;
-  height: auto;
+.portfolio-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.iframe-wrapper {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
+  overflow: hidden;
+  min-width: 300px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.doodle-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  overflow: hidden;
+  pointer-events: auto;
 }
 
-/* Slick Customization for Dots */
-.slick-dots {
-  position: absolute;
-  bottom: 0px; /* Adjust this to change the vertical position */
-  left: 50%;
-  transform: translateX(-50%); /* Center the dots */
-  z-index: 10; /* Ensure they are above other content */
-  padding: 0;
-  margin: 0;
-}
-
-.slick-dots li button:before {
-  font-size: 12px; /* Increase dot size */
-  color: black; /* Color for the dots */
-  opacity: 0.6; /* Slight transparency to make them less harsh */
-}
-
-.slick-dots li.slick-active button:before {
-  color: #000; /* Active dot color */
-  opacity: 1; /* Full opacity for active dot */
-}
-
-/* Slick Dot Customization: Make Dots Larger for Tablets and Mobile */
-@media screen and (max-width: 768px) {
-  .slick-dots li button:before {
-    font-size: 14px; /* Larger dots on tablets */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .slick-dots li button:before {
-    font-size: 16px; /* Even larger dots on mobile */
-  }
-}
-
-/* Responsive Adjustments for Tablets */
-@media screen and (max-width: 768px) {
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .portfolio-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
-  .doodle-image {
-    width: 150px;
-  }
-
-  .doodle-title {
-    font-size: 1.3rem;
+  .iframe-wrapper {
+    flex: 0 0 90%;
   }
 }
 
-/* Responsive Adjustments for Mobiles */
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .portfolio-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-  .doodle-image {
-    width: 120px;
-  }
-
-  .doodle-title {
-    font-size: 1.2rem;
+  .iframe-wrapper {
+    flex: 0 0 95%;
   }
 }
