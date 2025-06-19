@@ -14,7 +14,7 @@ const ContactUs: React.FC = () => {
             it to you!
           </p>
           <p>For further inquiries, feel free to reach us at any time.</p>
-          <a href="mailto:halt@gmail.com?subject=Inquiry&body=Hi, I would like to...">
+          <a href="mailto:haltconnect@gmail.com?subject=Inquiry&body=Hi, I would like to...">
             <button className="send-email-btn">Send Email</button>
           </a>
         </div>
