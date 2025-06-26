@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "vite build --base=/Halt/",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "vite build --base=/Halt/"
+    
   },
   "dependencies": {
     "matter-js": "^0.20.0",
