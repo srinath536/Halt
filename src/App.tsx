@@ -6,6 +6,7 @@ import HeroSection from './components/HeroSection'
 import PortfolioSection from './components/PortfolioSection';
 import ProcessSection from './components/ProcessSection';
 import ServicesSection from './components/ServicesSection';
+import Testimonials from './components/Testimonials';
 function App() {
  
 
@@ -16,6 +17,7 @@ function App() {
     <ServicesSection/>
     <ProcessSection/>
     <PortfolioSection/>
+    <Testimonials/>
     <ContactUs/>
     <Footer/>
   </div>
