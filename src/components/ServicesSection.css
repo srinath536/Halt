@@ -1,167 +1,76 @@
-/* Global Styles */
 .services-section {
-  background-color: white;
-  color: black;
-  padding: 60px 15px; /* Added overall padding for equal spacing */
-  font-family: "Arial", sans-serif;
-  box-sizing: border-box;
+  background-color: #fff;
+  color: #000;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
 }
 
-.section-header {
-  text-align: center;
+.services-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.services-header p {
+  font-size: 1.1rem;
+  color: #222;
   margin-bottom: 40px;
 }
 
-.section-header h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  animation: fadeInDown 1s ease;
-}
-
-.section-header p {
-  font-size: 1.2rem;
-  color: #444;
-  margin-top: 10px;
-  animation: fadeIn 1.2s ease;
-}
-
-/* Services Container - Grid Layout */
-.services-container {
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px; /* Space between cards */
-  margin: 0 auto; /* Center content */
-  padding: 0; /* Inner content doesn't need extra padding */
-  max-width: 1200px; /* Restricts container size for large screens */
-  width: 100%; /* Ensure full-width responsiveness */
-  box-sizing: border-box; /* Include padding in layout */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Service Card Styling */
 .service-card {
-  position: relative;
-  background-color: white;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  max-width: 100%; /* Stretching to container width */
-  cursor: pointer;
-  animation: fadeInUp 1s ease;
+  border: 1px solid #000;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .service-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 0 #000;
 }
 
-.service-card-header {
-  display: flex;
-  justify-content: center;
-  background-color: #f4f4f4;
-  padding: 30px;
+.service-card .icon {
+  margin-bottom: 20px;
+  color: #000;
 }
 
-.service-icon {
-  width: 60px;
-  height: 60px;
-  filter: grayscale(100%) brightness(0) invert(0);
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.service-card:hover .service-icon {
-  transform: rotate(360deg) scale(1.2);
-}
-
-.service-card-body {
-  padding: 20px;
-  text-align: center;
-}
-
-.service-title {
-  font-size: 1.6rem;
-  font-weight: 600;
+.service-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
   margin-bottom: 10px;
-  color: black;
   text-transform: uppercase;
 }
 
-.service-description {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.4;
+.service-card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-  .services-container {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on medium devices */
-    gap: 20px;
-    
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .services-header h2 {
+    font-size: 2rem;
   }
 
-  .service-card {
-    max-width: 220px; /* Ensures consistent card sizes */
-  }
-
-  .service-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .service-title {
-    font-size: 1.4rem;
-  }
-
-  .service-description {
-    font-size: 0.9rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .services-container {
-    grid-template-columns: repeat(2, 1fr); /* Single column for small screens */
+  .services-grid {
     gap: 20px;
   }
 
   .service-card {
-    max-width: 200px; /* Full-width card on smaller screens */
-  }
-
-  .service-icon {
-    width: 45px;
-    height: 45px;
-  }
-
-  .service-title {
-    font-size: 1.2rem;
-  }
-
-  .service-description {
-    font-size: 0.9rem;
+    padding: 20px 15px;
   }
 }

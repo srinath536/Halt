@@ -1,34 +1,29 @@
 import React from "react";
 import "./PortfolioSection.css";
 
-const PortfolioSection: React.FC = () => {
-  const projects = [
-    { url: "https://www.sabuildingsolutions.in/", name: "SA Building Solutions" },
-    { url: "https://www.digitalpowertech.in/", name: "Digital PowerTech" },
-    { url: "https://example.com", name: "Client Site" },
-  ];
+const websites = [
+  { name: "SA Building Solutions", url: "https://www.sabuildingsolutions.in/" },
+  { name: "Digital PowerTech", url: "https://www.digitalpowertech.in/" },
+  { name: "Client Site", url: "https://example.com" },
+];
 
+const PortfolioSection: React.FC = () => {
   return (
-    <section id="portfolio" className="portfolio-section">
-      <h2 className="portfolio-title">Our Projects</h2>
-      <div className="portfolio-scroll-container">
-        {projects.map((project, index) => (
-          <div key={index} className="iframe-wrapper">
-            <div className="overlay">{project.name}</div>
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="click-layer"
-              aria-label={`Visit ${project.name}`}
-            ></a>
-            <iframe
-              src={project.url}
-              title={`project-${index}`}
-              sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-              loading="lazy"
-            ></iframe>
-          </div>
+    <section className="portfolio-section" id="portfolio">
+      <h2 className="portfolio-title">Our Portfolio</h2>
+
+      <div className="portfolio-websites">
+        {websites.map((site, index) => (
+          <a
+            key={index}
+            href={site.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="website-card"
+          >
+            <span className="website-name">{site.name}</span>
+            <span className="external-icon">↗</span>
+          </a>
         ))}
       </div>
     </section>

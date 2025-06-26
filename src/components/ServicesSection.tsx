@@ -1,79 +1,48 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./ServicesSection.css";
+import { FaCode, FaBullhorn, FaPalette, FaCogs } from "react-icons/fa";
 
 const services = [
   {
-    id: "website-development",
-    icon: "https://cdn-icons-png.flaticon.com/512/7376/7376349.png",
-    title: "Web Application",
-    description: "Custom web applications and responsive websites",
+    id: "web-dev",
+    icon: <FaCode size={40} />,
+    title: "Web Applications",
+    description: "Clean, high-performance web-based platforms built for speed and scale.",
   },
   {
-    id: "tailored-solutions",
-    icon: "https://cdn-icons-png.flaticon.com/512/3050/3050424.png",
+    id: "solutions",
+    icon: <FaCogs size={40} />,
     title: "Tailored Solutions",
-    description: "Solutions designed to meet your unique business needs",
+    description: "Unique tech tailored to your exact business needs.",
   },
   {
-    id: "digital-marketing",
-    icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+    id: "marketing",
+    icon: <FaBullhorn size={40} />,
     title: "Digital Marketing",
-    description: "Reach your audience effectively through digital campaigns.",
+    description: "Maximize reach and conversion through targeted campaigns.",
   },
   {
-    id: "ui-ux-design",
-    icon: "https://cdn-icons-png.flaticon.com/512/2165/2165698.png",
-    title: "Poster Design & Branding",
-    description: "Professional posters and creative branding to help you stand out",
+    id: "branding",
+    icon: <FaPalette size={40} />,
+    title: "Design & Branding",
+    description: "Minimalist posters, logos, and branding that make you stand out.",
   },
 ];
 
 const ServicesSection: React.FC = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-up");
-          }
-        });
-      },
-      {
-        threshold: 0.2, // Trigger animation when 20% of the element is visible
-      }
-    );
-
-    const elements = document.querySelectorAll(".hidden");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect(); // Cleanup the observer on component unmount
-  }, []);
-
   return (
-    <section id="services" className="services-section">
-      <div className="section-header">
-        <h2>Our Services</h2>
-        <p>Tailored solutions to enhance your business.</p>
+    <section className="services-section" id="services">
+      <div className="services-header">
+        <h2>What We Do</h2>
+        <p>Minimal services. Maximum impact.</p>
       </div>
 
-      <div className="services-container">
+      <div className="services-grid">
         {services.map((service) => (
-          <div
-            className="service-card hidden" // Initial hidden class
-            key={service.id}
-            id={service.id}
-          >
-            <div className="service-card-header">
-              <img
-                src={service.icon}
-                alt={service.title}
-                className="service-icon"
-              />
-            </div>
-            <div className="service-card-body">
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-            </div>
+          <div className="service-card" key={service.id}>
+            <div className="icon">{service.icon}</div>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
           </div>
         ))}
       </div>
