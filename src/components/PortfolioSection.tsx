@@ -4,7 +4,7 @@ import "./PortfolioSection.css";
 const websites = [
   { name: "SA Building Solutions", url: "https://www.sabuildingsolutions.in/" },
   { name: "Digital PowerTech", url: "https://www.digitalpowertech.in/" },
-  { name: "Client Site", url: "https://example.com" },
+  { name: "Designs", url: "https://www.notion.so/H-Alt-Design-Portfolio-21fb5e9d646e8004a25af25097c2a9ce?source=copy_link" },
 ];
 
 const PortfolioSection: React.FC = () => {

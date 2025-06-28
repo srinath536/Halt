@@ -13,22 +13,25 @@ const Header: React.FC = () => {
   };
 
   const scrollToTop = () => {
-    // Scroll to the top of the page
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  
 
   return (
     <header className="header">
       <div className="container">
-        <div className="logo">H-Alt</div>
+        <div className="logo" onClick={scrollToTop} style={{ cursor: "pointer" }}>
+          H-Alt
+        </div>
         <button
-          className="hamburger"
+          className={`hamburger ${isMenuOpen ? "active" : ""}`}
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+          <div className="bar top"></div>
+          <div className="bar middle"></div>
+          <div className="bar bottom"></div>
         </button>
         <nav className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
           <ul className="nav-list">

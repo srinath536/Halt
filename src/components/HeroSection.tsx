@@ -4,9 +4,9 @@ import heroImage from "../assets/hero.webp"; // Update path as per your folder s
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="hero">
+    <section id="hero" className="hero">
       <div className="hero-left">
-        <h1 className="hero-title">We’re H-alt.</h1>
+        <h1 className="hero-title">We’re H-Alt.</h1>
         <p className="hero-subtitle">
           We build sharp SaaS products, fuel brands, and grow digital tribes.
         </p>
